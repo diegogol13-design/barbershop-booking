@@ -3,15 +3,13 @@ const bookingForm = document.getElementById('bookingForm');
 const confirmationMessage = document.getElementById('confirmationMessage');
 const btnNewBooking = document.querySelector('.btn-new-booking');
 const dateInput = document.getElementById('date');
+const submitBtn = document.getElementById('submitBtn');
 
 // Establecer fecha mínima (hoy)
 setMinimumDate();
 
 // Event Listeners
 bookingForm.addEventListener('submit', handleSubmit);
-if (btnNewBooking) {
-    btnNewBooking.addEventListener('click', resetForm);
-}
 
 /**
  * Establece la fecha mínima como hoy
@@ -36,9 +34,6 @@ function handleSubmit(e) {
         return;
     }
 
-    // Simular envío al servidor
-    console.log('Datos de la cita:', bookingData);
-    
     // Guardar en localStorage
     saveBooking(bookingData);
 
@@ -47,6 +42,11 @@ function handleSubmit(e) {
 
     // Ocultar formulario
     bookingForm.style.display = 'none';
+
+    // Enviar el formulario a Formspree después de 1 segundo
+    setTimeout(() => {
+        bookingForm.submit();
+    }, 1000);
 }
 
 /**
@@ -134,6 +134,7 @@ function resetForm() {
     confirmationMessage.classList.add('hidden');
     bookingForm.style.display = 'grid';
     setMinimumDate();
+    window.location.href = bookingForm.getAttribute('action');
 }
 
 /**
@@ -155,3 +156,4 @@ function cancelBooking(bookingId) {
 // Exportar funciones para uso en consola
 console.log('Sistema de agendamiento cargado correctamente');
 console.log('Funciones disponibles: getAllBookings(), cancelBooking(id)');
+console.log('✅ Envío de correos activado con Formspree');
