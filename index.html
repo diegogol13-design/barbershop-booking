@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbershop - Agendamiento de Citas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="logo">✂️ Barbershop Elite</h1>
+                <p class="tagline">El mejor servicio de barbería en la ciudad</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <section class="booking-section">
+                <h2>Agenda tu cita</h2>
+                <form id="bookingForm" class="booking-form">
+                    <!-- Nombre -->
+                    <div class="form-group">
+                        <label for="name">Nombre completo</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="form-group">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <!-- Teléfono -->
+                    <div class="form-group">
+                        <label for="phone">Teléfono</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+
+                    <!-- Servicio -->
+                    <div class="form-group">
+                        <label for="service">Servicio</label>
+                        <select id="service" name="service" required>
+                            <option value="">Selecciona un servicio</option>
+                            <option value="corte">Corte de cabello - $15</option>
+                            <option value="afeitado">Afeitado - $10</option>
+                            <option value="completo">Servicio completo - $25</option>
+                            <option value="tinte">Tinte y corte - $30</option>
+                        </select>
+                    </div>
+
+                    <!-- Barbero -->
+                    <div class="form-group">
+                        <label for="barber">Barbero preferido</label>
+                        <select id="barber" name="barber" required>
+                            <option value="">Selecciona un barbero</option>
+                            <option value="carlos">Carlos</option>
+                            <option value="juan">Juan</option>
+                            <option value="miguel">Miguel</option>
+                            <option value="any">Cualquiera</option>
+                        </select>
+                    </div>
+
+                    <!-- Fecha -->
+                    <div class="form-group">
+                        <label for="date">Fecha</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+
+                    <!-- Hora -->
+                    <div class="form-group">
+                        <label for="time">Hora</label>
+                        <input type="time" id="time" name="time" required>
+                    </div>
+
+                    <!-- Notas -->
+                    <div class="form-group">
+                        <label for="notes">Notas adicionales</label>
+                        <textarea id="notes" name="notes" rows="4" placeholder="Cuéntanos sobre tu estilo o preferencias..."></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn-submit">Agendar cita</button>
+                </form>
+            </section>
+
+            <!-- Confirmation Message -->
+            <div id="confirmationMessage" class="confirmation-message hidden">
+                <h3>¡Cita agendada exitosamente!</h3>
+                <p>Hemos enviado los detalles a tu correo electrónico.</p>
+                <button class="btn-new-booking">Agendar otra cita</button>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2024 Barbershop Elite. Todos los derechos reservados.</p>
+            <p>📍 Calle Principal 123 | ☎️ (555) 123-4567</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
